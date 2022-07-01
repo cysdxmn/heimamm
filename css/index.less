@@ -1,0 +1,247 @@
+body {
+    // background-color: pink;
+    box-sizing: border-box;
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #F2F4F7;
+}
+
+a {
+    text-decoration: none;
+    color: #707070;
+}
+
+// 约束当屏幕大于 750px 的时候，html 字体大小就不变化了
+@media screen and (min-width: 750px) {
+    html {
+        // 因为js文件中将屏幕分成了20等份 750/20 = 37.5
+        font-size: 37.5px !important;
+    }
+}
+
+.wrap {
+    background-color: #fff;
+    padding-bottom: 1.1467rem;
+}
+
+.header {
+    height: 2.1333rem;
+    border-bottom: 1px solid #EAEAEA;
+    text-align: center;
+    line-height: 2.1333rem;
+    font-size: .9333rem;
+    color: #1C1C1C;
+}
+
+.nav {
+    display: flex;
+    // 显示不开就换行
+    flex-wrap: wrap;
+    padding: 1.1733rem 0 1.6rem 0;
+
+    .item {
+        display: flex;
+        width: 33.33%;
+        // 纵向显示
+        flex-direction: column;
+        // 水平居中
+        align-items: center;
+
+        img {
+            width: 3.7067rem;
+            height: 3.7067rem;
+        }
+
+        span {
+            font-size: .6667rem;
+            
+        }
+
+        // 选择前面三个 -n+3选择前3个
+        &:nth-child(-n+3) {
+            margin-bottom: 1.6533rem;
+        }
+    }
+}
+
+.go {
+    margin: 0 .2667rem 0 .48rem;
+    img {
+        width: 100%;
+    }
+}
+
+.centent {
+    padding: 1.0667rem .64rem;
+    background-color: #fff;
+    margin-top: .2667rem;
+
+    .con-hd {
+        display: flex;
+        // 只能2在浮动(弹性布局)下使用  两侧布局
+        justify-content: space-between;
+        height: 1.0133rem;
+        line-height: 1.0133rem;
+        margin-bottom: .9067rem;
+        // background-color: pink;
+
+        h4 {
+            margin: 0;
+            font-size: .7467rem;
+            color: #333333;
+
+            .icon {
+                display: inline-block;
+                width: 1.0133rem;
+                height: 1.0133rem;
+                // 添加这个代码，可以让后面的文字垂直居中
+                vertical-align: middle;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .more {
+            font-size: .5867rem;
+            color: #999;
+        }
+    }
+}
+
+.get_job_focus {
+    position: relative;
+    .swiper {
+        // width: 100%;
+        width: 14.4rem;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        // 竖向排列
+        flex-direction: column;
+        transition: 300ms;
+        // 其余得到兄弟是0.8倍大小
+        transform: scale(0.8);
+        opacity: 0.4;
+
+        a {
+            width: 9.0133rem;
+            height: 10.0267rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+            width: 9.0133rem;
+            font-size: .6667rem;
+            margin-top: .64rem;
+            color: #333333;
+        }
+    }
+	
+    // 当前选中的 slide 中间那个
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active{
+        transform: scale(1);
+        z-index: 999;
+        opacity: 1;
+	}
+}
+
+.study_con {
+    margin-bottom: 3.7333rem;
+}
+
+// 学习模块的轮播图
+.study {
+
+    .swiper {
+        padding: .2667rem;
+    }
+
+    .swiper-slide {
+        font-size: 18px;
+        background: #fff;
+        width: 7.7333rem;
+        height: 9.0667rem;
+        // background-color: pink;
+        border-radius: .2667rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        h5 {
+            font-size: .7467rem;
+            margin: .5333rem 0px;
+            font-weight: 400;
+            padding: 0 .2667rem;
+        }
+
+        p {
+            font-size: .6933rem;
+            color: #999;
+            padding: 0 .2667rem;
+
+            span {
+                color: #FF4400;
+            }
+        }
+    }
+    
+
+    img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.footer {
+    // 固定定位（不占有位置）
+    box-sizing: border-box; // 盒子模型
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 2.9333rem;
+    width: 100%;
+
+    z-index: 99999;
+    display: flex;
+    padding: .5333rem;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+
+    .item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 1.04rem;
+            height: 1.0933rem;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            margin-top: .2933rem;
+            font-size: .5867rem;
+            color: #666;
+        }
+    }
+
+}
